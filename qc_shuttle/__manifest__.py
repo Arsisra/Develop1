@@ -5,7 +5,7 @@
   'summary': 'Quality Control Shuttle',
   'author': 'Steven Morison, stevenmorizon123@gmail.com',
   'category': 'Manufacture',
-  'depends': ['base', 'web', 'mesin_unggul', 'web_responsive'],
+  'depends': ['base', 'web', 'mesin_unggul',],
   'data': [
     'security/ir.model.access.csv',
     'views/view_layout_shuttle.xml',

@@ -25,14 +25,12 @@
 <field name="type">tree</field>
 <field name="arch" type="xml">
     <tree decoration-success="state == 'done'" decoration-danger="state == 'cancel'">
-        <field name="priority" optional="show" widget="priority" nolabel="1"/>
-        <field name="name" decoration-bf="1"/>
+        <field name="name" decoration-bf="1"/> 
         <field name="operator" decoration-bf="1" widget="many2one_avatar_employee"/>
-        <field name="shift" decoration-bf="1"/>
+        <field name="tanggal_snap" decoration-success="state == 'done'" decoration-danger="state == 'cancel'" decoration-bf="1"/>
+        <field name="shift" decoration-bf="1"/> 
         <field name="putaran" widget="badge"/>
-        <field name="tanggal_snap" decoration-success="state == 'done'" decoration-danger="state == 'cancel'"/>
         <field name="total_snap" widget="badge" decoration-warning="1" decoration-bf="1"/>
-        <field name="date_planned_finished" attrs="{'invisible': [('state', '!=', 'done')]}" widget="remaining_days" decoration-bf="1"  decoration-success="state == 'done'"  decoration-danger="state == 'cancel'"/>
         <field name="state" optional="show" widget="badge" decoration-success="state == 'done'"  decoration-muted="state =='draft'" decoration-danger="state == 'cancel'" decoration-info="state == 'start'" decoration-warning="state == 'progress'" decoration-bf="1"/>
     </tree>
 </field>
@@ -226,7 +224,7 @@
 
 <!-- Kanban View -->
 <record id="snap_qc_shuttle_kanban_view" model="ir.ui.view">
-    <field name="name">snap.qc.shuttle.kanban</field>
+    <field name="name">snap.qc.kanban</field>
     <field name="model">snap.qc</field>
     <field name="arch" type="xml">
         <kanban class="o_kanban_mobile" sample="1">
@@ -245,7 +243,6 @@
                 <t t-name="kanban-box">
                     <div t-attf-class="oe_kanban_card oe_kanban_global_click">
                         <div class="o_kanban_record_top">
-                            <field name="priority" widget="priority"/>
                             <div class="o_kanban_record_headings mt4 ml-1">
                                 <strong class="o_kanban_record_title"><span><t t-esc="record.name.value"/></span></strong>
                             </div>
@@ -279,7 +276,7 @@
 
 <!-- Calender View -->
 <record id="view_snap_qc_shuttle_calender" model="ir.ui.view">
-    <field name="name">snap.qc.shuttle.calendar</field>
+    <field name="name">snap.qc.calendar</field>
     <field name="model">snap.qc</field>
     <field eval="2" name="priority"/>
     <field name="arch" type="xml">
@@ -293,7 +290,7 @@
 
 <!-- Pivot View -->
 <record id="view_snap_qc_pivot" model="ir.ui.view">
-    <field name="name">snap.qc.shuttle.pivot</field>
+    <field name="name">snap.qc.pivot</field>
     <field name="model">snap.qc</field>
     <field name="arch" type="xml">
         <pivot string="Snap Qc Shuttle" sample="1">

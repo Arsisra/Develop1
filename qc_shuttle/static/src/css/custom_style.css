@@ -146,16 +146,8 @@
  }
 
 
-/* Gaya dasar untuk radio button */
-.radio-line label {
-  display: inline-block;
-  padding: 5px 10px;
-  font-size: 20px;
-  border: 2px solid #13c1a6;
-  background-color: #f1f2f2;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
+.oe_kanban_color_6{
+  background-color: #cdff1b;
 }
 
 /* Gaya saat radio button aktif dipilih */
