@@ -18,8 +18,7 @@ class SnapQc(models.Model):
     # Relasi ke model mesin.produksi dari modul mesin_unggul(mesin_produksi.py)
     # untuk menampilkan nomor_mesin menggunakan domain field deret.
     mesin_produksi_id = fields.Many2one('mesin.produksi', string='Mesin Produksi')
-    deret = fields.Many2one('deret.mesin.produksi',
-    string="Deret",domain="[('nama_deret', 'like', 'LINE SHUTTLE%')]")
+    deret = fields.Many2one('deret.mesin.produksi',string="Deret",domain="[('nama_deret', 'like', 'S%')]")
 
     # field yang digunakan untuk menampilakn total dari masing masing kerusakkan
     # menggunakan compute
