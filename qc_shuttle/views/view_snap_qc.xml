@@ -26,6 +26,12 @@
     <field name="type">form</field>
     <field name="arch" type="xml">
         <form>
+            <header>
+                <button name="action_draft" string="Draft" type="object" class="btn btn-outline-primary"/>
+                <button name="action_done" string="Done" type="object" class="btn btn-outline-success"/>
+                <button name="action_cancel" string="Cancel" type="object" class="btn btn-outline-danger"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,done,cancel"/>
+            </header>
             <sheet>
             <div class="oe_title">
             <h1>

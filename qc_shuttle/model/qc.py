@@ -108,7 +108,23 @@ class SnapQc(models.Model):
             ('progress','In Progress'),
             ('done', 'Done'),
             ('cancel', 'Cancelled')], 
-            string="Status", readonly=True,copy=False, default="draft",track_visibility='onchange', widget='statusbar')            
+            string="Status", readonly=True,copy=False, default="draft",track_visibility='onchange', widget='statusbar')  
+
+    # Tombol Draft
+    def action_draft(self):
+        self.write({'state': 'draft'}) 
+    # Tombol start
+    def action_start(self):
+        self.write({'state': 'start'})    
+    # Tombol Progres
+    def action_progress(self):
+        self.write({'state': 'progress'})
+    # Tombol Done
+    def action_done(self):
+        self.write({'state': 'done'})
+    # Tombol Cancel
+    def action_cancel(self):
+        self.write({'state': 'cancel'})                               
     
     # Id Record Data
     def name_get(self):
