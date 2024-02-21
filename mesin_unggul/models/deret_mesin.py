@@ -3,8 +3,9 @@ from odoo.exceptions import UserError, ValidationError
 
 
 class DeretMesin(models.Model):
-    _name ='deret.mesin.produksi'
-    _description='Deret Mesin Produksi'
+    _name = 'deret.mesin.produksi'
+    _description = 'Deret Mesin Produksi'
+    _order = 'nama_deret asc'
 
 
     nama_deret = fields.Char(string="Deret")
